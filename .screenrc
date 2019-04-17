@@ -1,0 +1,9 @@
+sessionname workflow-docs
+setenv ROOT $PWD
+# __INSERTPOINT__ This line allows a script to insert new configuration lines here.
+chdir $ROOT/figures
+screen -t figures
+chdir $ROOT
+screen -t rstudio
+screen -t man
+screen -t root
