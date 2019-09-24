@@ -16,8 +16,8 @@ It depends on library makefiles from
 
 - MegaHIT
 
-MegaHIT, Bowtie2 and Samtools are all installed as modules at UPPMAX clusters, all named as you
-expect but with only small letters. Choose the newest version.
+All are installed as modules at UPPMAX clusters, all named as you expect but with only small
+letters. Choose the newest version.
 
 ## Biomakefiles
 
