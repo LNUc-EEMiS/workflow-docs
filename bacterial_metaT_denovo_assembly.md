@@ -6,36 +6,22 @@ starting with a *de novo* assembly.
 It depends on library makefiles from
 [biomakefiles](https://github.com/erikrikarddaniel/biomakefiles) and the following programs:
 
-- MegaHIT
+- Cutadapt
+
+- Sickle
 
 - Bowtie2
 
 - Samtools
+
+- MegaHIT
 
 MegaHIT, Bowtie2 and Samtools are all installed as modules at UPPMAX clusters, all named as you
 expect but with only small letters. Choose the newest version.
 
 ## Biomakefiles
 
-[Biomakefiles](https://github.com/erikrikarddaniel/biomakefiles) is a repository of library
-*makefiles* that makes it easier to run programs and also documents some important facts about
-programs that were run to produce a certain result.  (There are now better tools for the same
-purpose, in particular [Snakemake](https://pypi.org/project/snakemake/), but we have not yet
-rewritten workflows, so until we do, you'll have to make do with *Make*.)
-
-More documentation will eventually be found [here](biomakefiles.md).
-
-To use biomakefiles, you need to clone the repository somewhere, and then create a symlink to this
-in your project.
-
-```
-cd ~
-mkdir dev
-git clone https://github.com/erikrikarddaniel/biomakefiles.git
-cd ~
-cd projects/my_metat
-ln -s ~/dev/biomakefiles .
-```
+See [Make and `biomakefiles`](biomakefiles.md) for a, so far, short introduction.
 
 # Workflow
 
@@ -58,6 +44,7 @@ The overall workflow runs like this:
 ## Preparing your sequence files
 
 First, you need to run [quality trimming and cut adapters](quality_trim_and_cutadapt.md).
+*NOT DONE YET.*
 
 ## Remove stable RNA
 
