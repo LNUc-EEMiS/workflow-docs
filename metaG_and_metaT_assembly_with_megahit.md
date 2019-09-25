@@ -1,8 +1,9 @@
 # Assembly of metaG or metaT sequences with MegaHIT
 
 Create a new directory with symlinks to quality checked fastq files with file names ending with
-`.r1.fastq.gz` and `.r2.fastq.gz` for forward and reverse respectively, and create a file called
-`Makefile` looking like this:
+`.r1.fastq.gz` and `.r2.fastq.gz` for forward and reverse respectively (see the ["File suffices"
+section of "Make and `biomakefiles`](biomakefiles.md)), and create a file called `Makefile` looking
+like this:
 
 ```{make}
 include ../../../biomakefiles/lib/make/makefile.megahit

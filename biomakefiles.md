@@ -24,3 +24,19 @@ cd projects/my_metat
 # Create a link to your copy of the repository
 ln -s ~/dev/biomakefiles .
 ```
+
+## Conventions in `biomakefiles`
+
+You need to follow a few rules to get Make with `biomakefiles` to work properly and efficiently. 
+
+### File suffices
+
+The rules in `biomakefiles` require that file names end -- have correct suffices -- in a certain
+way. Once you have started a project and run the first step, files will automatically get correct
+names, unless you rename them, but for the first step, you need to get suffices right. In most cases
+you will start with paired fastq files, and they should preferably be gzipped (end with `.gz`). File
+names differ between sequencing machines and centers. One common name pattern is that forward reads
+are placed in files with `_R1_` or just `_1_` somewhere in their names, whereas reverse reads have
+`_R2_` or `_2_`. To work with `biomakefiles` forward reads *must* be placed in files ending with
+`.r1.fastq.gz` and reverse reads in files ending with `.r2.fastq.gz` (the `.gz` is required for most
+tasks, voluntary for some and doesn't work for a few).
