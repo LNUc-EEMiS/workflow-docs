@@ -40,3 +40,12 @@ are placed in files with `_R1_` or just `_1_` somewhere in their names, whereas 
 `_R2_` or `_2_`. To work with `biomakefiles` forward reads *must* be placed in files ending with
 `.r1.fastq.gz` and reverse reads in files ending with `.r2.fastq.gz` (the `.gz` is required for most
 tasks, voluntary for some and doesn't work for a few).
+
+*Do not rename* your original files, the best way to create files with correct names is to create
+*symbolic links*. If you have your original files in the `origfiles` directory parallel to the
+current one, the way to create symlinks in this directory is:
+
+```
+ln -s ../origfiles/name_R1_1.fastq.gz name.r1.fastq.gz # Forward
+ln -s ../origfiles/name_R2_1.fastq.gz name.r2.fastq.gz # Reverse
+```
