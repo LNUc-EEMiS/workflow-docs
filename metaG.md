@@ -20,7 +20,7 @@ letters. Choose the newest version.
 
 ## Biomakefiles
 
-See [Make and `biomakefiles`](biomakefiles.md) for a, so far, short introduction.
+See [Make and `biomakefiles`](detail-docs/biomakefiles.md) for a, so far, short introduction.
 
 # Workflow
 
@@ -42,7 +42,7 @@ The overall workflow runs like this:
 
 ## Preparing your sequence files
 
-First, you need to run [quality trimming and cut adapters](quality_trim_and_cutadapt.md).
+First, you need to run [quality trimming and cut adapters](detail-docs/quality_trim_and_cutadapt.md).
 *NOT DONE YET.*
 
 ## Remove stable RNA
@@ -51,4 +51,4 @@ TO BE DOCUMENTED.
 
 ## Assembly with MegaHIT
 
-See [Assembly of metaG or metaT sequences with MegaHIT](metaG_and_metaT_assembly_with_megahit.md).
+See [Assembly of metaG or metaT sequences with MegaHIT](detail-docs/metaG_and_metaT_assembly_with_megahit.md).

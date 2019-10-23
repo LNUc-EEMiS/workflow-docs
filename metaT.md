@@ -21,7 +21,7 @@ letters. Choose the newest version.
 
 ## Biomakefiles
 
-See [Make and `biomakefiles`](biomakefiles.md) for a, so far, short introduction.
+See [Make and `biomakefiles`](detail-docs/biomakefiles.md) for a, so far, short introduction.
 
 # Workflow
 
@@ -52,7 +52,7 @@ TO BE DOCUMENTED.
 
 ## Assembly with MegaHIT
 
-See [Assembly of metaG or metaT sequences with MegaHIT](metaG_and_metaT_assembly_with_megahit.md).
+See [Assembly of metaG or metaT sequences with MegaHIT](detail-docs/metaG_and_metaT_assembly_with_megahit.md).
 
 ## Map back reads to the assembly
 
@@ -62,8 +62,9 @@ proportion of reads do not map back to the assembly, the assembly is not very re
 Secondly, after calling ORFs (genes) one can use the mapping results to quantify the ORFs, leading
 to the tables with genes, samples and counts that we need for the biological analysis.
 
-Mapping in general will be described in [mapping reads to sequences](mapping_reads_to_sequences.md),
-so here I'm only giving a short description of how to map metaT reads to a MegaHIT assembly.
+Mapping in general will be described in [mapping reads to
+sequences](detail-docs/mapping_reads_to_sequences.md), so here I'm only giving
+a short description of how to map metaT reads to a MegaHIT assembly.
 
 Create a subdirectory to the `all.megahit_out` directory created by the assembly process described
 above, and place symbolic links to the read files plus the output from the assembly there:
