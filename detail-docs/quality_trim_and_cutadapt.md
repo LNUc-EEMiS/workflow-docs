@@ -75,6 +75,86 @@ samples; *note* that N is in two places in the command):
 sbatch -A $uproject -J fast-multiqc -p core -n N --wrap "make -j N all_fastqc" --mail-user=$email --mail-type=ALL -t 10-00:00:00
 ```
 
-### 2. Cutting adapters with `cutadapt`
+*Note* the variables `$uproject` and `$email` used in the command. Either set
+the variables or change the command to include your project name and email
+address respectively.
 
-### 3. Quality trimming with `sickle`
+### 2. Cutting adapters with cutadapt
+
+Similar to above, in the `qc/cutadapt` directory, create symlinks to the gzipped
+fastq symlinks in `samples` to ensure the files end with `.r1.fastq.gz` and
+`.r2.fastq.gz` for forward and reverse reads respectively. Then create a
+`Makefile` looking like this:
+
+```{make}
+include ../../biomakefiles/lib/make/makefile.cutadapt
+```
+
+Provided you have access to the `cutadapt` program, you can then run:
+
+```
+make cutall
+```
+
+On UPPMAX, run through the queue using *N* cores (set *N* <= the number of
+samples; *note* that N is in two places in the command):
+
+```
+sbatch -A $uproject -J fast-multiqc -p core -n N --wrap "make -j N cutall" --mail-user=$email --mail-type=ALL -t 10-00:00:00
+```
+
+### 3. Quality trimming with sickle
+
+In the `qc/sickle` directory, create symlinks to the output gzipped fastq files
+from the cutadapt step:
+
+```
+cd qc/sickle
+ln -s ../cutadapt/*.ca.r?.fastq.gz .
+```
+
+Create a `Makefile` looking like this:
+
+```{make}
+include ../../biomakefiles/lib/make/makefile.sickle
+```
+
+Provided you have access to the `sickle` program, you can then run:
+
+```
+make fastq.gz2pesickle
+```
+
+On UPPMAX, run through the queue using *N* cores (set *N* <= the number of
+samples; *note* that N is in two places in the command):
+
+```
+sbatch -A $uproject -J fast-multiqc -p core -n N --wrap "make -j N fastq.gz2pesickle" --mail-user=$email --mail-type=ALL -t 10-00:00:00
+```
+
+### 4. Run FastQC/MultiQC on the output from sickle
+
+In the `qc/sickle/fastqc` directory, create symlinks to the output from sickle
+(ignoring the non-paired sequences):
+
+```
+cd qc/sickle/fastqc
+ln -s ../*.pesickle.r?.fastq.gz .
+```
+
+And create a `Makefile`:
+
+```{make}
+include ../../../biomakefiles/lib/make/makefile.fastqc
+```
+
+```
+make all_fastqc
+```
+
+On UPPMAX, run through the queue using *N* cores (set *N* <= the number of
+samples; *note* that N is in two places in the command):
+
+```
+sbatch -A $uproject -J fast-multiqc -p core -n N --wrap "make -j N all_fastqc" --mail-user=$email --mail-type=ALL -t 10-00:00:00
+```

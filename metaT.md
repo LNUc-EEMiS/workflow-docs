@@ -44,7 +44,6 @@ The overall workflow runs like this:
 ## Preparing your sequence files
 
 First, you need to run [quality trimming and cut adapters](detail-docs/quality_trim_and_cutadapt.md).
-*NOT DONE YET.*
 
 ## Remove stable RNA
 
