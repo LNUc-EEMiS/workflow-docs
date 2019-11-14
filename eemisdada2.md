@@ -30,8 +30,8 @@ Conda packages are found in
 life easier for you if you configure your Conda to use a few useful channels:
 
 ```
-conda config --add conda-forge
-conda config --add bioconda
+conda config --add channels conda-forge
+conda config --add channels bioconda
 ```
 
 
