@@ -68,7 +68,7 @@ module for Conda -- **don't use that**, but install it yourself.
 ### Installing Miniconda
 
 Instructions for installation of Conda is available
-[here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). Choose *Miniconda*,
+[here](https://conda.io/projects/conda/en/latest/user-guide/install/linux.html). Choose *Miniconda*,
 not *Anaconda* (Anaconda is Miniconda plus >700 packages that you might not need).
 
 A somewhat confusing part of Conda is that it is available in two versions for each operating
