@@ -13,7 +13,8 @@ the, relatively short, [user
 guide](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
 If you're running on UPPMAX, read [running programs on
-UPPMAX](detail-docs/running_programs_on_uppmax.md) *including the part about installing Miniconda*.
+UPPMAX](detail-docs/running_programs_on_uppmax.md) *including the part about
+installing your own programs with Conda*.
 
 After you have installed your own Conda, I suggest you create an environment called eemisdada2, in
 which you install all the packages you will need (except eemisdada2 which I haven't made into a
