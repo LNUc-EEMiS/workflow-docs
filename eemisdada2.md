@@ -6,13 +6,16 @@ amplicon reads. This document describes how to install and run the scripts with 
 
 ## Get Conda and set up an eemisdada2 environment
 
-### Installing Miniconda
-
 A number of dependencies for the scripts are available via
 [Conda](https://docs.conda.io/en/latest/index.html), a program that manages other programs and
 software libraries. Installing the dependencies with Conda is in most cases the easiest option. Read
 the, relatively short, [user
 guide](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
+
+If you're running on UPPMAX, read [running programs on
+UPPMAX](detail-docs/running_programs_on_uppmax.md) *including the part about installing Miniconda*.
+
+### Installing Miniconda
 
 Instructions for installation of Conda is available
 [here](https://conda.io/projects/conda/en/latest/user-guide/install/index.html). Choose *Miniconda*,
