@@ -21,8 +21,8 @@ Conda packages are found in
 life easier for you if you configure your Conda to use a few useful channels:
 
 ```
-conda config --add --env channels conda-forge
-conda config --add --env channels bioconda
+conda config --add channels conda-forge
+conda config --add channels bioconda
 ```
 
 ## Creating an environment
