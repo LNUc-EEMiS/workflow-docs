@@ -128,6 +128,12 @@ slightly different names. The documentation is work in progress...
 
 ### Example command line
 
+First of all, you need to activate the Conda environment:
+
+```
+conda activate dada2
+```
+
 Assuming you have created a directory `dada2` in which you have collected symlinks to your raw data
 files, you could run the script like this:
 
