@@ -131,7 +131,7 @@ slightly different names. The documentation is work in progress...
 First of all, you need to activate the Conda environment:
 
 ```
-conda activate dada2
+conda activate eemisdada2
 ```
 
 Assuming you have created a directory `dada2` in which you have collected symlinks to your raw data
