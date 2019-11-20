@@ -146,8 +146,10 @@ this:
 #SBATCH -n 8
 #SBATCH -t 10-00:00:00
 #SBATCH -J dada2
+#SBATCH --mail-type ALL
+#SBATCH --mail-user your.email@address
 
-dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbos > dada2.out 2>&1e
+dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbose --mail-type ALL --mail-user your.email@address > dada2.out 2>&1
 ```
 
 If you saved the above in a file called `dada2_submit.sbatch` you would submit like this:
