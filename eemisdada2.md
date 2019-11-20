@@ -147,7 +147,7 @@ this:
 #SBATCH -t 10-00:00:00
 #SBATCH -J dada2
 
-dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbose
+dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbos > dada2.out 2>&1e
 ```
 
 If you saved the above in a file called `dada2_submit.sbatch` you would submit like this:
@@ -159,5 +159,5 @@ sbatch dada2_submit.sbatch
 You could also submit the script directly on the command line:
 
 ```
-sbatch -A p2012999 -p core -n 8 -t 10-00:00:00 -J dada2 --wrap"dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbose"
+sbatch -A p2012999 -p core -n 8 -t 10-00:00:00 -J dada2 --wrap"dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbose > dada2.out 2>&1"
 ```
