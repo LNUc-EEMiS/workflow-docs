@@ -72,6 +72,8 @@ Log out and log in again and run the `which dada2wf.R` command to check if the s
 
 ## Running the script(s)
 
+### Denoising
+
 With the above done, you're ready to start denoising your reads with the `dada2wf.R` script. The
 script runs all steps of the process: filtering and trimming reads, calculating error profiles,
 denoising reads, merging pairs and filtering out likely chimeric sequences. It will produce a table
@@ -169,3 +171,24 @@ You could also submit the script directly on the command line:
 ```
 sbatch -A p2012999 -p core -n 8 -t 10-00:00:00 -J dada2 --wrap "dada2wf.R --trimleft=21,21 --trunclen=290,210 --fwdmark=_R1_ --revmark=_R2_ --verbose > dada2.out 2>&1" --mail-type=ALL --mail-user=your.email@address
 ```
+
+### Assigning taxonomy
+
+After you have denoised your sequences, you will likely want to assign taxonomy to the ASV
+sequences. There's a special script for this: `dada2taxonomy.R`. There are two main algorithms
+implemented in the script: RDP and IDTAXA. I recommend the former, since the latter is slow and
+in my opinion doesn't give convincing results. (It is, however, supposed to be more conservative,
+which might be good.) 
+
+You select which database to use for the classification, e.g. SILVA or GTDB, by providing the script
+with a fasta file that you can download from data from the [DADA2
+site](https://benjjneb.github.io/dada2/training.html) (choose a file for "assignTaxonomy").
+
+It is simple to run the script with the RDP classifier and the GTDB file from the above site:
+
+```
+dada2taxonomy.R --species_fasta=sequences.fna.gz --rdp_fasta=GTDB_bac-arc_ssu_r86.fa.gz
+```
+
+I'm unsure how much resources one needs for this, so try allocating 2 cores and be ready to increase
+this if it fails because the process asked for too much memory.
