@@ -187,8 +187,11 @@ site](https://benjjneb.github.io/dada2/training.html) (choose a file for "assign
 It is simple to run the script with the RDP classifier and the GTDB file from the above site:
 
 ```
-dada2taxonomy.R --species_fasta=sequences.fna.gz --rdp_fasta=GTDB_bac-arc_ssu_r86.fa.gz
+dada2taxonomy.R --rdp_fasta=GTDB_bac-arc_ssu_r86.fa.gz sequences.fna
 ```
+
+`sequences.fna` is a file that's output by the `dada2wf.R` script and contains all the ASV
+sequences. (If it ends with `.fna.gz`, you need to gunzip it: `gunzip sequences.fna.gz`).
 
 I'm unsure how much resources one needs for this, so try allocating 2 cores and be ready to increase
 this if it fails because the process asked for too much memory.
