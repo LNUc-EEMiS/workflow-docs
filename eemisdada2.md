@@ -23,10 +23,10 @@ which you install all the packages you will need (except eemisdada2 which I have
 Conda package yet). Doing this is easy:
 
 ```
-conda create -n eemisdada2 r-optparse r-tidyverse bioconductor-dada2
+conda create -n eemisdada2 r-optparse r-tidyverse bioconductor-dada2 bioconductor-decipher
 ```
 
-The above will create an environment called eemisdada2 that contains the three conda packages you
+The above will create an environment called eemisdada2 that contains the four conda packages you
 need for the eemisdada2 scripts.
 
 ### Clone the eemisdada2 repository and make sure scripts are available
