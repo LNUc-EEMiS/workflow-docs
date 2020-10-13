@@ -11,7 +11,7 @@ not *Anaconda* (Anaconda is Miniconda plus >700 packages that you might not need
 
 A somewhat confusing part of Conda is that it is available in two versions for each operating
 system: One for Python 2.7 (Miniconda2) and one for Python 3.x (Miniconda3). In most cases you're
-fine with *Miniconda3*, but on some older computers it might work because Python 3.x is not
+fine with *Miniconda3*, but on some older computers it might not work because Python 3.x is not
 installed, then you can choose Miniconda2; the functionality is, as far as I know, the same.
 
 ### Setting up channels
@@ -41,3 +41,21 @@ conda create -n my-env
 ```
 
 ## Using a program in an environment
+
+Running a program in an environment is as easy as just activating the environment:
+
+```
+conda activate my-env
+```
+
+After you're done with that, you deactivate:
+
+```
+conda deactivate
+```
+
+To avoid having to activate and deactivate many environments for a task, consider creating 
+environments for tasks, e.g. assembly and annotation of reads, instead of one environment
+per program.
+Note however that you can do both, having each key program in its own environment as well
+as in one or more task specific environments.
