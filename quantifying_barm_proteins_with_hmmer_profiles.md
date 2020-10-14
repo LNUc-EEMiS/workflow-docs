@@ -77,7 +77,37 @@ It has the following purposes:
    to profiles.
    In the latter case, the cutoffs are specified in a tab separated text file and input to the
    program with the `--scorefile` parameter.
-2. Map profile hits to protein names...
-3. Rank the hits...
+2. Map profile hits to protein names and add extra information. 
+   If you provide a table (tab separated text file) with a mapping from profile accessions to
+   protein names, `hmmrank.r` will output this information with each profile hit in the output
+   table.
+   By specifying more than one profile, separated with "ampersands" ("&"), you can specify that a
+   protein needs to contain all profiles to be counted; useful for multiple domain proteins or
+   fusion proteins.
+   If you want to, you can add columns with information about the proteins, but make sure there's a
+   "protein" and a "profile" column (all small letters).
+   This table is provided to the script with the `--annottable` parameter.
+3. The script will rank the hits for each database sequence.
+   This is a way of dealing with ORFs sometimes matching more than one profile.
+   The ranking is output as a number in a column called "rank" in the output table.
+   If there are ties, i.e. two or more profiles giving the same score for a single ORF, this is
+   output as a non-integer rank, e.g. 1.5.
+   If you only want the best scoring hits, you can run the script with `--only_best_scoring`.
+
+Other useful options and parameters are:
+
+* `--minscore=N`: Allows you to set a minimum score for proteins for which you do not have a specific
+  score in the table given as argument to `--scorefile` (see 1. above).
+* `--maxscore=N`: Allows you to set a maximum threshold for scores.
+  This is useful in cases where you're using scores taken e.g. from Pfam or TIGRFAM "gathering
+  scores", which might at times be very high and not suitable for the sometimes fragmented genes we
+  have in metaG or metaT.
+* `--qfromname`: Translate the name of profiles to the accession.
+  In e.g. Pfam profiles there's both a name (e.g. "Bac_rhodopsin") and an accession (e.g.
+  "PF01036").
+  In `hmmsearch` result files, the former is used, but the latter is typically what you use in your
+  tables (annottable and scorefile).
+  With this option, `hmmrank.r` will translate the name to the accession, *given* that the `.tblout`
+  files are named with the accessions first, e.g. "PF01036.tblout".
 
 ### Protocol
