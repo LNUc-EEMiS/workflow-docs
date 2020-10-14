@@ -110,4 +110,6 @@ Other useful options and parameters are:
   With this option, `hmmrank.r` will translate the name to the accession, *given* that the `.tblout`
   files are named with the accessions first, e.g. "PF01036.tblout".
 
+### Using `biomakefiles`
+
 ### Protocol
